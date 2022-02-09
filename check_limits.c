@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
+#include "check_limits.h"
 
 int Check_Temperature_Range(float temp_in_celcius)
 {
@@ -29,7 +30,7 @@ int Check_SOC_Range(float soc_value)
 
 int Charge_Rate_Limit(float chargeRate)
 {
-  if((chargeRate < chargeRate_lowerthreshold) || (chargeRate > chargeRate_upperthreshold)) 
+  if(chargeRate < chargeRate_threshold) 
   {
     printf("Charge Rate out of range!\n");
     return 0;
@@ -38,4 +39,9 @@ int Charge_Rate_Limit(float chargeRate)
   {
     return 1;
   }
+}
+
+int batteryIsOk(float temperature_in_celcius,float soc_value, float charge_rate) 
+{    
+  
 }
