@@ -13,5 +13,5 @@ int Check_SOC_Range(float);
 int Charge_Rate_Limit(float);
 int batteryIsOk(float, float, float);
 
-int Battery_Range_Check(float battery_temp, float soc_val, float charge_rate, int (*fnPtrForCheckBatteryStatus)(float,float,float));
-void test_battery_status(bool expected_range, float actual_temperature, float actual_soc, float actual_charge, int (*fnPtrForRange_Check)(float,float,float));
+int Battery_Range_Check(float, float, float, int (*fnPtrForCheckBatteryStatus)(float,float,float));
+void test_battery_status(int, float, float, float);
