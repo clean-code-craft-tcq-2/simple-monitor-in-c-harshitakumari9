@@ -40,7 +40,7 @@ int batteryIsOk(float battery_temp, float soc, float ChargeRate)
    return (Check_Temperature_Range(battery_temp) && Check_SOC_Range(soc) && Charge_Rate_Limit(ChargeRate));
 }
 
-int Battery_Range_Check(float battery_temp, float soc_val, float charge_rate, void (*fnPtrForCheckBatteryStatus)(float,float,float))
+int Battery_Range_Check(float battery_temp, float soc_val, float charge_rate, int (*fnPtrForCheckBatteryStatus)(float,float,float))
 {
     int range_check = fnPtrForCheckBatteryStatus(battery_temp, soc_val, charge_rate);
     if(range_check)
@@ -55,7 +55,7 @@ int Battery_Range_Check(float battery_temp, float soc_val, float charge_rate, vo
   }
 }
     
-void test_battery_status(bool expected_range, float actual_temperature, float actual_soc, float actual_charge, int (*fnPtrForRange_Check)(float,float,float))
+void test_battery_status(boolean expected_range, float actual_temperature, float actual_soc, float actual_charge, int (*fnPtrForRange_Check)(float,float,float))
 { 
    int battery_status = fnPtrForRange_Check(actual_temperature, actual_soc, actual_charge);
    assert (battery_status == expected_range);
