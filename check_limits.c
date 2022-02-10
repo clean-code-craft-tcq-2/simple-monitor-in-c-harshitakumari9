@@ -45,12 +45,12 @@ int Battery_Range_Check(float battery_temp, float soc_val, float charge_rate)
     int range_check = batteryIsOk(battery_temp, soc_val, charge_rate);
     if(range_check == 1)
    { 
-     printf("\n Battery Status is Ok!");
+     printf("Battery Status is Ok!\n");
      return 1;
    }
   else
   {
-    printf("\n Battery Not Ok!");
+    printf("Battery Not Ok!\n");
     return 0;
   }
 }
