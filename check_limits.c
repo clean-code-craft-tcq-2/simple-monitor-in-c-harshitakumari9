@@ -26,7 +26,7 @@ int Check_SOC_Range(float soc_value)
 
 int Charge_Rate_Limit(float chargeRate)
 {
-  if(chargeRate <= chargeRate_threshold) 
+  if(chargeRate >= chargeRate_threshold) 
   {
     printf("Charge Rate out of range!\n");
     return 0;
@@ -43,7 +43,7 @@ int batteryIsOk(float battery_temp, float soc, float ChargeRate)
 int Battery_Range_Check(float battery_temp, float soc_val, float charge_rate)
 {
     int range_check = batteryIsOk(battery_temp, soc_val, charge_rate);
-    if(range_check)
+    if(range_check == 1)
    { 
      printf("\n Battery Status is Ok!");
      return 1;
