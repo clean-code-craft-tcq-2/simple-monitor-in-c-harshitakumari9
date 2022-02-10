@@ -11,6 +11,3 @@
 int Check_Temperature_Range(float);
 int Check_SOC_Range(float);
 int Charge_Rate_Limit(float);
-int (*batteryIsOk)(float, float, float);
-int (*Battery_Range_Check)(float, float, float, void);
-void (*void test_battery_status)(bool, float, float, float, int);
