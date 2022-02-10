@@ -55,8 +55,8 @@ int Battery_Range_Check(float battery_temp, float soc_val, float charge_rate, in
   }
 }
     
-void test_battery_status(boolean expected_range, float actual_temperature, float actual_soc, float actual_charge, int (*fnPtrForRange_Check)(float,float,float))
+void test_battery_status(bool expectedRange, float actual_temperature, float actual_soc, float actual_charge, int (*fnPtrForRange_Check)(float,float,float))
 { 
    int battery_status = fnPtrForRange_Check(actual_temperature, actual_soc, actual_charge);
-   assert (battery_status == expected_range);
+   assert (battery_status == expectedRange);
 }
